@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="origin">
+            <div id="draggable-1" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
+                Item 1
+            </div>
+            <div id="draggable-1" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
+                Item 1
+            </div>
+        </div>
+
+        <div class="dropzone" ondragover="dragover_handler(event);" ondrop="drop_handler(event);">
+            DROP ZONE
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
