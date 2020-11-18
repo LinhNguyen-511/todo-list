@@ -5,21 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
-        <div class="origin">
+    <!-- the todo heading of the page -->
+    <div class="heading-container">
+        <h1 class="todo-heading">Todo<i class="fas fa-check-circle" style="font-size: 15pt; color: red;"></i></h1>
+    </div>
+    <!-- the planner section -->
+    <div class="planner">
+        <!-- input field to add todo -->
+        <div class="add-todo">
+            <input type="text" id="todo-input" placeholder="Add another Todo">
+        </div>
+        <div class="container">
+        <div class="dropzone todos" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);" >
+            <header>
+                <h3 class="todos-text">Todos</h3>
+            </header>
+            
             <div id="draggable-1" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
-                Item 1
-            </div>
-            <div id="draggable-1" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
-                Item 1
+                <p>Item 1</p>
             </div>
         </div>
 
-        <div class="dropzone" ondragover="dragover_handler(event);" ondrop="drop_handler(event);">
-            DROP ZONE
+        <div class="dropzone doing" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);">
+            <header>
+                <h3 class="doing-text">Doing</h3>
+            </header>
+            <div id="draggable-2" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
+                <p>Item 2</p> 
+            </div>
+        </div>
+        <div class="dropzone done" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);">
+            <header>
+                <h3 class="done-text">Done</h3>
+            </header>
+            <div id="draggable-3" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
+                <p>Item 3</p>
+            </div>
+        </div>
         </div>
     </div>
     <script src="script.js"></script>

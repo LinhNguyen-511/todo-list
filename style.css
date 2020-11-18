@@ -10,31 +10,96 @@ html {
 
 body {
     font-family: sans-serif;
-    background-color: white;
+    background-color: #171717;
     font-size: 8pt;
+    color: white;
+    margin: 0;
+    padding: 2%;
+    height: 100vh;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
+h1 {
+    font-size: 25pt;
 }
 
 /* SPECIFIC */
-.container {
+
+.heading-container {
     display: flex;
-    height: 50vh;
-    flex-direction: row;
-    flex: 1;
+    width: max-content;
+    flex-direction: column;
+    line-height: 0;
+    justify-content: start;
+    border-radius: 10px;
 }
 
-.origin {
-    flex-basis: 100%;
-    border: 1px solid;
-    background-color: aqua;
+.todo-heading {
+    text-decoration: line-through solid red;
+}
+
+.planner {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 80vh;
+    margin: auto;
+    justify-content: stretch;
+    padding: 2% 5% 2% 5%;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.add-todo {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+header h3 {
+    padding: 0 3px 0 3px;
+}
+
+.todos-text {
+    background-color: #2ec4b6;
+    border-radius: 5px;
+}
+.doing-text {
+    background-color: #ff9f1c;
+    border-radius: 5px;
+}
+.done-text {
+    background-color: #e71d36;
+    border-radius: 5px;
 }
 
 .dropzone {
     flex-basis: 100%;
-    border: 1px solid;
-    background-color: orange;
+    padding: 10px;
+    border-right: 0.01px solid rgba(128, 128, 128, 0.103);
+}
+
+.container div:last-child {
+    border-right: none;
 }
 
 .draggable {
-    background-color: #4AAE9B;
-    margin: 10px;
+    min-height: 25px;
+    background-color: #f1faee;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 25px 5px 0;
+    
 }
