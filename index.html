@@ -6,6 +6,8 @@
     <title>To do list</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <!-- the todo heading of the page -->
@@ -16,33 +18,44 @@
     <div class="planner">
         <!-- input field to add todo -->
         <div class="add-todo">
-            <input type="text" id="todo-input" placeholder="Add another Todo">
+            <input type="text" id="todo-add" placeholder="Add another Todo">
         </div>
+        <!-- the todo doing done section -->
         <div class="container">
-        <div class="dropzone todos" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);" >
+        <div class="dropzone" id="todos" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);" >
+            <!-- headers are not draggable -->
             <header>
                 <h3 class="todos-text">Todos</h3>
             </header>
             
             <div id="draggable-1" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
                 <p>Item 1</p>
+                <button class="delete" onclick = "removeTask(this);">
+                    <i class="far fa-trash-alt"></i>
+                </button>
             </div>
         </div>
 
-        <div class="dropzone doing" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);">
+        <div class="dropzone" id="doing" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);">
             <header>
                 <h3 class="doing-text">Doing</h3>
             </header>
             <div id="draggable-2" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
                 <p>Item 2</p> 
+                <button class="delete" onclick = "removeTask(this);">
+                    <i class="far fa-trash-alt"></i>
+                </button>
             </div>
         </div>
-        <div class="dropzone done" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);">
+        <div class="dropzone" id="done" ondragover="dragover_handler(event);" ondrop="drop_handler(event, this);">
             <header>
                 <h3 class="done-text">Done</h3>
             </header>
             <div id="draggable-3" class="draggable" draggable="true" ondragstart="dragStart_handler(event);" ondragend="dragend_handler(event);">
                 <p>Item 3</p>
+                <button class="delete" onclick = "removeTask(this);">
+                    <i class="far fa-trash-alt"></i>
+                </button>
             </div>
         </div>
         </div>
